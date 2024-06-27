@@ -168,7 +168,8 @@ module ActiveDelivery
 
     def initialize(**params)
       @params = params
-      @params.freeze
+      # Do not freeze so we can add custom params
+      # @params.freeze
     end
 
     # Enqueues delivery (i.e. uses #deliver_later for mailers)
